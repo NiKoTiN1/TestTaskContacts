@@ -1,0 +1,24 @@
+﻿@using TestTaskContacts.VeiwModels.Models;
+@model IEnumerable<TestTaskContacts.VeiwModels.Models.ContactViewModel>
+
+@{
+    ViewData["Title"] = "Contacts";
+    Layout = "_Layout";
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" defer></script>
+
+
+<h1>Contact list</h1>
+
+<div id="modalContainer"></div>
+
+<div id="listContainer">
+    @await Html.PartialAsync("ContactListPartial", Model)
+</div>
+
+<button id="createButton" type="button" class="btn btn-primary">
+    Create
+</button>
+
+<script src="~/js/index.js"></script>
